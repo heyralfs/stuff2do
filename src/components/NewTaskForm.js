@@ -18,7 +18,7 @@ const NewTaskForm = ({ todos, setTodos, uniqueId, setUniqueId }) => {
       {
         task: inputValue,
         category: selectValue,
-        complete: false,
+        completed: false,
         id: uniqueId,
       },
     ]);

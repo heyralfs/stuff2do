@@ -14,6 +14,10 @@ const TodoItem = styled.li`
   &:hover {
     box-shadow: -1px 2px 3px 1px rgba(0, 0, 0, 0.1);
   }
+  &.completed {
+    color: #ccc;
+    text-decoration: line-through;
+  }
 `;
 
 TodoItem.ActionButton = styled.button`
