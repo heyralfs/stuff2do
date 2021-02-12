@@ -1,30 +1,35 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 const Form = styled.form`
-  input, 
+  input,
   select,
   button[type="submit"] {
-    padding: 5px;
     height: 35px;
-    border: 1px solid ${ ( {theme} )  => theme.submitColor };
+    border: 1px solid ${({ theme }) => theme.bgColor};
     transition: all 300ms;
   }
-  input:focus, 
+  input,
+  select {
+    padding: 5px 10px;
+    margin-right: 5px;
+    color: ${({ theme }) => theme.color};
+  }
+  input:focus,
   select:focus,
   button[type="submit"]:focus {
     outline: 0;
   }
   input {
-    width: calc( 70% - 35px );
+    width: calc(75% - 45px);
   }
   select {
-    width: 30%;
+    width: 25%;
     color: #666;
   }
   button[type="submit"] {
-    background-color: ${ ( {theme} )  => theme.submitColor };
-    color: ${ ( {theme} )  => theme.widgetBg };
+    background-color: ${({ theme }) => theme.bgColor};
+    color: ${({ theme }) => theme.widgetBg};
     width: 35px;
     display: inline-block;
     cursor: pointer;

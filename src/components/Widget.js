@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const Widget = styled.div`
   margin-top: 24px;
@@ -9,15 +9,17 @@ const Widget = styled.div`
   width: 100vw;
   height: 90vh;
   max-width: 768px;
-  box-shadow: 0 0 15px 5px rgba(0,0,0,0.5);
-  h1, h2, h3 {
+  box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.5);
+  h1,
+  h2,
+  h3 {
     text-align: center;
     font-size: 18px;
     font-weight: 600;
     letter-spacing: 1px;
     line-height: 1;
     margin-bottom: 5px;
-    color: ${({ theme }) => theme.titleColor}
+    color: ${({ theme }) => theme.titleColor};
   }
   p {
     font-size: 14px;
@@ -27,13 +29,14 @@ const Widget = styled.div`
 `;
 
 Widget.Header = styled.header`
-  padding: 18px 32px; 
+  padding: 18px 32px;
   * {
     margin: 0;
   }
-  p, a {
+  p,
+  a {
     font-size: 12px;
-    color: ${({ theme }) => theme.titleColor}
+    color: ${({ theme }) => theme.titleColor};
   }
 `;
 
