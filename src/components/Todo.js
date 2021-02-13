@@ -11,6 +11,7 @@ const Todo = ({ todo, todos, setTodos }) => {
 
   const deleteHandler = () => {
     setTodos(todos.filter((el) => el.id !== todo.id));
+    setDeleteModal(false);
   };
 
   const checkHendler = () => {
@@ -39,31 +40,33 @@ const Todo = ({ todo, todos, setTodos }) => {
         key={`task__${todo.id}`}
         className={todo.completed ? "completed" : ""}
       >
-        {todo.task}
+        <TodoItem.TextBox>{todo.task}</TodoItem.TextBox>
 
-        <TodoItem.ActionButton
-          className="deleteBtn"
-          onClick={() => setDeleteModal(true)}
-        >
-          <FontAwesomeIcon icon={faTrash} />
-        </TodoItem.ActionButton>
+        <div style={{ textAlign: "right", width: "100px" }}>
+          <TodoItem.ActionButton>
+            <FontAwesomeIcon icon={faCheck} onClick={checkHendler} />
+          </TodoItem.ActionButton>
 
-        <TodoItem.ActionButton>
-          <FontAwesomeIcon icon={faEdit} onClick={editHandler} />
-        </TodoItem.ActionButton>
+          <TodoItem.ActionButton>
+            <FontAwesomeIcon icon={faEdit} onClick={editHandler} />
+          </TodoItem.ActionButton>
 
-        <TodoItem.ActionButton>
-          <FontAwesomeIcon icon={faCheck} onClick={checkHendler} />
-        </TodoItem.ActionButton>
+          <TodoItem.ActionButton
+            className="deleteBtn"
+            onClick={() => setDeleteModal(true)}
+          >
+            <FontAwesomeIcon icon={faTrash} />
+          </TodoItem.ActionButton>
+        </div>
       </TodoItem>
 
       {editModal && (
         <ModalWrapper>
           <ModalWrapper.Modal>
-            <h3>"Edit task" is not yet available :(</h3>
+            <h3>"Edit task" is not yet available</h3>
             <DialogueBoxButton
               buttonClass="cancelBtn"
-              text="Cancel"
+              text="ok :("
               onClick={() => setEditModal(false)}
             />
           </ModalWrapper.Modal>
@@ -73,15 +76,15 @@ const Todo = ({ todo, todos, setTodos }) => {
         <ModalWrapper>
           <ModalWrapper.Modal>
             <h3>Are you sure you want to delete this task?</h3>
-            <div>
+            <div style={{ width: "100%" }}>
               <DialogueBoxButton
                 buttonClass="acceptBtn"
-                text="yes"
+                text="yes, please :)"
                 onClick={deleteHandler}
               />
               <DialogueBoxButton
                 buttonClass="cancelBtn"
-                text="Cancel"
+                text="no, thanks!"
                 onClick={() => setDeleteModal(false)}
               />
             </div>

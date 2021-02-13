@@ -20,6 +20,10 @@ const BoxButton = styled.button`
   &:hover {
     opacity: 0.9;
   }
+  @media screen and (max-width: 576px) {
+    width: 100%;
+    margin: 5px 0;
+  }
 `;
 const DialogueBoxButton = ({ buttonClass, text, onClick }) => {
   return (

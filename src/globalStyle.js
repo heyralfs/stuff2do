@@ -19,6 +19,9 @@ const GlobalStyle = createGlobalStyle`
     justify-content: center;
     align-items: center;
   }
+  #root {
+    width: 100vw;
+  }
 `;
 
 export default GlobalStyle;

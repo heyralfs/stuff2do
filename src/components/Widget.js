@@ -1,13 +1,12 @@
 import styled from "styled-components";
 
 const Widget = styled.div`
-  margin-top: 24px;
-  margin-bottom: 24px;
+  margin: auto;
   border: 1px solid ${({ theme }) => theme.widgetBg};
   background-color: ${({ theme }) => theme.widgetBg};
   overflow: hidden;
-  width: 100vw;
-  height: 90vh;
+  width: 100%;
+  min-height: 90vh;
   max-width: 768px;
   box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.5);
   h1,
@@ -26,6 +25,10 @@ const Widget = styled.div`
     font-weight: 400;
     line-height: 1;
   }
+  @media screen and (max-width: 576px) {
+    min-height: 100vh;
+    padding-top: 10px;
+  }
 `;
 
 Widget.Header = styled.header`
@@ -42,6 +45,9 @@ Widget.Header = styled.header`
 
 Widget.Content = styled.div`
   padding: 24px 32px 32px 32px;
+  @media screen and (max-width: 576px) {
+    padding: 24px 16px 16px 16px;
+  }
 `;
 
 export default Widget;

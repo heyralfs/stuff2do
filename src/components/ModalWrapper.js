@@ -17,6 +17,7 @@ const ModalWrapper = styled.div`
 `;
 
 ModalWrapper.Modal = styled.div`
+  max-width: 90%;
   background: ${({ theme }) => theme.widgetBg};
   padding: 30px;
   display: flex;

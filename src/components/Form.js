@@ -26,6 +26,7 @@ const Form = styled.form`
   select {
     width: 25%;
     color: #666;
+    background: ${({ theme }) => theme.widgetBg};
   }
   button[type="submit"] {
     background-color: ${({ theme }) => theme.bgColor};
@@ -36,6 +37,19 @@ const Form = styled.form`
   }
   button[type="submit"]:hover {
     opacity: 0.9;
+  }
+  @media screen and (max-width: 576px) {
+    display: flex;
+    flex-direction: column;
+    button {
+      margin-left: auto;
+    }
+    input,
+    select,
+    button[type="submit"] {
+      width: 100%;
+      margin-bottom: 5px;
+    }
   }
 `;
 

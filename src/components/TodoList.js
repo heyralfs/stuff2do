@@ -18,9 +18,17 @@ const TodoList = ({ todos, setTodos }) => {
     return (
       <>
         <TodoCategoryTitle>{category}</TodoCategoryTitle>
-        {filteredTodos.map((todo) => (
-          <Todo todo={todo} todos={todos} setTodos={setTodos} />
-        ))}
+        <ul
+          style={{
+            display: "flex",
+            flexDirection: "column-reverse",
+            padding: "0",
+          }}
+        >
+          {filteredTodos.map((todo) => (
+            <Todo todo={todo} todos={todos} setTodos={setTodos} />
+          ))}
+        </ul>
       </>
     );
   }
