@@ -14,6 +14,9 @@ export default function App() {
     titleColor: "lightcoral",
     color: "#777",
   };
+  const [preferences, setPreferences] = React.useState(defaultPreferences);
+  // to change some theme preference, eg, color, do:
+  // setPreferences( { ...preferences, color: 'yellow' } )
 
   // check if there is any todo on local storage before setTodos
   const [todos, setTodos] = React.useState(() => {
@@ -30,13 +33,10 @@ export default function App() {
   // save todos and last id on localStorage when they uptade
   React.useEffect(() => {
     window.localStorage.setItem("todosLocal", JSON.stringify(todos));
+  }, [todos]);
+  React.useEffect(() => {
     window.localStorage.setItem("lastIdUsed", uniqueId);
-  }, [todos, uniqueId]);
-
-  // to change some theme preference, eg, color, do:
-  // setPreferences( { ...preferences, color: 'yellow' } )
-
-  const [preferences, setPreferences] = React.useState(defaultPreferences);
+  }, [uniqueId]);
 
   return (
     <div className="App">

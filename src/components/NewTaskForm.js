@@ -7,10 +7,6 @@ const NewTaskForm = ({ todos, setTodos, uniqueId, setUniqueId }) => {
   const [inputValue, setInputValue] = React.useState("");
   const [selectValue, setSelectValue] = React.useState("");
 
-  React.useEffect(() => {
-    setUniqueId(Number(uniqueId) + 1);
-  }, [todos]);
-
   const submitHandler = (event) => {
     event.preventDefault();
     setTodos([
@@ -22,7 +18,7 @@ const NewTaskForm = ({ todos, setTodos, uniqueId, setUniqueId }) => {
         id: uniqueId,
       },
     ]);
-
+    setUniqueId(uniqueId + 1);
     setInputValue("");
     setSelectValue("");
   };

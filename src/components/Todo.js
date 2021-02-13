@@ -16,11 +16,14 @@ const Todo = ({ todo, todos, setTodos }) => {
   const checkHendler = () => {
     setTodos(
       todos.map((item) => {
+        console.log(item);
         if (item.id === todo.id) {
           return {
             ...item,
             completed: !item.completed,
           };
+        } else {
+          return item;
         }
       })
     );
