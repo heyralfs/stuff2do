@@ -54,7 +54,18 @@ const Todo = ({ todo, todos, setTodos }) => {
         </TodoItem.ActionButton>
       </TodoItem>
 
-      {editModal && <ModalWrapper />}
+      {editModal && (
+        <ModalWrapper>
+          <ModalWrapper.Modal>
+            <h3>"Edit task" is not yet available :(</h3>
+            <DialogueBoxButton
+              buttonClass="cancelBtn"
+              text="Cancel"
+              onClick={() => setEditModal(false)}
+            />
+          </ModalWrapper.Modal>
+        </ModalWrapper>
+      )}
       {deleteModal && (
         <ModalWrapper>
           <ModalWrapper.Modal>
