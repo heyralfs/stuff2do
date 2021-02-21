@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const BoxButton = styled.button`
   width: 200px;
-  margin: 20px;
+  margin: 20px 5px;
   border: 0;
   height: 35px;
   text-transform: uppercase;

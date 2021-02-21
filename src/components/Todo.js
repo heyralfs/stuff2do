@@ -4,6 +4,7 @@ import { faCheck, faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
 import TodoItem from "./TodoItem";
 import ModalWrapper from "./ModalWrapper";
 import DialogueBoxButton from "./DialogueBoxButton";
+import EditBox from "./EditBox";
 
 const Todo = ({ todo, todos, setTodos }) => {
   const [editModal, setEditModal] = React.useState(false);
@@ -17,7 +18,6 @@ const Todo = ({ todo, todos, setTodos }) => {
   const checkHendler = () => {
     setTodos(
       todos.map((item) => {
-        console.log(item);
         if (item.id === todo.id) {
           return {
             ...item,
@@ -63,11 +63,13 @@ const Todo = ({ todo, todos, setTodos }) => {
       {editModal && (
         <ModalWrapper>
           <ModalWrapper.Modal>
-            <h3>"Edit task" is not yet available</h3>
-            <DialogueBoxButton
-              buttonClass="cancelBtn"
-              text="ok :("
-              onClick={() => setEditModal(false)}
+            <h3>Edit task</h3>
+            <EditBox
+              todo={todo}
+              todos={todos}
+              setTodos={setTodos}
+              editModal={editModal}
+              setEditModal={setEditModal}
             />
           </ModalWrapper.Modal>
         </ModalWrapper>
