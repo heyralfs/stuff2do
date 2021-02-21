@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/stuff2do/static/js/main.ccc6cf34.chunk.js",
-    "main.js.map": "/stuff2do/static/js/main.ccc6cf34.chunk.js.map",
+    "main.js": "/stuff2do/static/js/main.f4c3fcfe.chunk.js",
+    "main.js.map": "/stuff2do/static/js/main.f4c3fcfe.chunk.js.map",
     "runtime-main.js": "/stuff2do/static/js/runtime-main.dc6b8dd2.js",
     "runtime-main.js.map": "/stuff2do/static/js/runtime-main.dc6b8dd2.js.map",
-    "static/js/2.a58d2eb7.chunk.js": "/stuff2do/static/js/2.a58d2eb7.chunk.js",
-    "static/js/2.a58d2eb7.chunk.js.map": "/stuff2do/static/js/2.a58d2eb7.chunk.js.map",
+    "static/js/2.cc8da0fc.chunk.js": "/stuff2do/static/js/2.cc8da0fc.chunk.js",
+    "static/js/2.cc8da0fc.chunk.js.map": "/stuff2do/static/js/2.cc8da0fc.chunk.js.map",
     "static/js/3.f287e895.chunk.js": "/stuff2do/static/js/3.f287e895.chunk.js",
     "static/js/3.f287e895.chunk.js.map": "/stuff2do/static/js/3.f287e895.chunk.js.map",
     "index.html": "/stuff2do/index.html",
-    "static/js/2.a58d2eb7.chunk.js.LICENSE.txt": "/stuff2do/static/js/2.a58d2eb7.chunk.js.LICENSE.txt"
+    "static/js/2.cc8da0fc.chunk.js.LICENSE.txt": "/stuff2do/static/js/2.cc8da0fc.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.dc6b8dd2.js",
-    "static/js/2.a58d2eb7.chunk.js",
-    "static/js/main.ccc6cf34.chunk.js"
+    "static/js/2.cc8da0fc.chunk.js",
+    "static/js/main.f4c3fcfe.chunk.js"
   ]
 }
