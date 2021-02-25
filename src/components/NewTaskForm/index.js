@@ -1,11 +1,16 @@
 import React from "react";
-import Form from "./Form";
+import Form from "./style";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSave } from "@fortawesome/free-solid-svg-icons";
+import { TodosContext } from "../../contexts/TodosContext";
 
-const NewTaskForm = ({ todos, setTodos, uniqueId, setUniqueId }) => {
+const NewTaskForm = () => {
   const [inputValue, setInputValue] = React.useState("");
   const [selectValue, setSelectValue] = React.useState("");
+
+  const { todos, setTodos, uniqueId, setUniqueId } = React.useContext(
+    TodosContext
+  );
 
   const submitHandler = (event) => {
     event.preventDefault();

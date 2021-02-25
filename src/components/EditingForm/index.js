@@ -1,38 +1,12 @@
 import React from "react";
-import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSave } from "@fortawesome/free-solid-svg-icons";
-import DialogueBoxButton from "./DialogueBoxButton";
+import { TodosContext } from "../../contexts/TodosContext";
+import EditingFormWrapper from "./style";
 
-const EditForm = styled.form`
-  width: 100%;
-  display: block;
-  padding: 0 5px;
-  margin-top: 15px;
+const EditingForm = ({ todo, setIsEditingModalActive }) => {
+  const { todos, setTodos } = React.useContext(TodosContext);
 
-  input,
-  select {
-    height: 35px;
-    border: 1px solid ${({ theme }) => theme.bgColor};
-    transition: all 300ms;
-    color: ${({ theme }) => theme.color};
-    padding: 5px 10px;
-  }
-  input {
-    width: calc(70% - 5px);
-    margin-right: 5px;
-  }
-  select {
-    width: 30%;
-  }
-  input:focus,
-  select:focus {
-    outline: 0;
-  }
-`;
-
-const EditBox = ({ todo, todos, setTodos, editModal, setEditModal }) => {
-  const saveIcon = <FontAwesomeIcon icon={faSave} />;
   //separa as demais tasks da que será editada
   const remainingTodos = todos.filter((item) => item.id !== todo.id);
 
@@ -50,12 +24,13 @@ const EditBox = ({ todo, todos, setTodos, editModal, setEditModal }) => {
   function submitEdition(e) {
     e.preventDefault();
     setTodos([...remainingTodos, todoEdited]);
-    setEditModal(false);
+    setIsEditingModalActive(false);
   }
 
   return (
-    <>
-      <EditForm onSubmit={submitEdition}>
+    <EditingFormWrapper>
+      <h3>Are you sure you want to delete this task?</h3>
+      <form onSubmit={submitEdition}>
         <input
           type="text"
           value={todoEdited.task}
@@ -72,22 +47,21 @@ const EditBox = ({ todo, todos, setTodos, editModal, setEditModal }) => {
           <option value="upcoming">Upcoming</option>
           <option value="someday">Someday</option>
         </select>
-      </EditForm>
+      </form>
       <div>
-        <DialogueBoxButton
-          buttonClass="acceptBtn"
-          text={saveIcon}
-          onClick={submitEdition}
-        />
+        <button className="acceptBtn" onClick={submitEdition}>
+          <FontAwesomeIcon icon={faSave} />
+        </button>
 
-        <DialogueBoxButton
-          buttonClass="cancelBtn"
-          text="Cancel"
-          onClick={() => setEditModal(false)}
-        />
+        <button
+          className="cancelBtn"
+          onClick={() => setIsEditingModalActive(false)}
+        >
+          Cancel
+        </button>
       </div>
-    </>
+    </EditingFormWrapper>
   );
 };
 
-export default EditBox;
+export default EditingForm;

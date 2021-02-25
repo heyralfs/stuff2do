@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const TodoItem = styled.li`
+const TodoListItem = styled.li`
   display: flex;
   align-items: center;
   /* justify-content: center; */
@@ -15,6 +15,7 @@ const TodoItem = styled.li`
   transition: all 300ms;
   &:hover {
     box-shadow: -1px 2px 3px 1px rgba(0, 0, 0, 0.1);
+    /* cursor: grab; */
   }
   &.completed {
     color: #ccc;
@@ -26,37 +27,42 @@ const TodoItem = styled.li`
   &.completed button:hover {
     opacity: 0.9;
   }
-`;
 
-TodoItem.TextBox = styled.div`
-  width: calc(100% - 100px);
-  padding-right: 5px;
-`;
+  & div.todo-description {
+    width: calc(100% - 100px);
+    padding-right: 5px;
+  }
 
-TodoItem.ActionButton = styled.button`
-  height: 25px;
-  width: 25px;
-  font-size: 12px;
-  color: white;
-  transition: all 300ms;
-  cursor: pointer;
-  &:not(:first-of-type) {
+  & div.buttons-wrapper {
+    width: 100%;
+    text-align: right;
+  }
+
+  & button {
+    height: 25px;
+    width: 25px;
+    font-size: 12px;
+    color: white;
+    transition: all 300ms;
+    cursor: pointer;
+  }
+  & button:not(:first-of-type) {
     margin-left: 5px;
   }
-  &:hover {
+  & button:hover {
     opacity: 0.9;
   }
-  &:focus {
+  & button:focus {
     outline: 0;
   }
-  &:not(.deleteBtn) {
+  & button:not(.deleteBtn) {
     border: 1px solid ${({ theme }) => theme.bgColor};
     background-color: ${({ theme }) => theme.bgColor};
   }
-  &.deleteBtn {
+  & button.deleteBtn {
     border: 1px solid ${({ theme }) => theme.titleColor};
     background-color: ${({ theme }) => theme.titleColor};
   }
 `;
 
-export default TodoItem;
+export default TodoListItem;

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Widget = styled.div`
+const BoardWrapper = styled.div`
   margin: auto;
   border: 1px solid ${({ theme }) => theme.widgetBg};
   background-color: ${({ theme }) => theme.widgetBg};
@@ -8,7 +8,8 @@ const Widget = styled.div`
   width: 100%;
   min-height: 90vh;
   max-width: 768px;
-  box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  padding: 10px 20px;
   h1,
   h2,
   h3 {
@@ -31,23 +32,4 @@ const Widget = styled.div`
   }
 `;
 
-Widget.Header = styled.header`
-  padding: 18px 32px;
-  * {
-    margin: 0;
-  }
-  p,
-  a {
-    font-size: 12px;
-    color: ${({ theme }) => theme.titleColor};
-  }
-`;
-
-Widget.Content = styled.div`
-  padding: 24px 32px 32px 32px;
-  @media screen and (max-width: 576px) {
-    padding: 24px 16px 16px 16px;
-  }
-`;
-
-export default Widget;
+export default BoardWrapper;
