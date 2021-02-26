@@ -57,7 +57,7 @@ const NewTaskForm = () => {
         <option value="upcoming">Upcoming</option>
         <option value="someday">Someday</option>
       </select>
-      <button type="submit">
+      <button type="submit" title="save">
         <FontAwesomeIcon icon={faSave} />
       </button>
     </Form>

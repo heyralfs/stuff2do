@@ -6,16 +6,16 @@ import { TodosContext } from "../../contexts/TodosContext";
 const TodoList = () => {
   const categories = ["today", "tomorrow", "upcoming", "someday"];
 
-  const { todos, setTodos } = React.useContext(TodosContext);
+  const { todos } = React.useContext(TodosContext);
 
   function listTodosByCategory(category) {
     const filteredTodos = todos.filter((todo) => todo.category === category);
     return (
-      <TodoListWrapper>
+      <TodoListWrapper key={`category__${category}`}>
         <h4>{category}</h4>
         <ul>
-          {filteredTodos.map((todo) => (
-            <TodoItem todo={todo} />
+          {filteredTodos.map((todo, index) => (
+            <TodoItem todo={todo} key={`${category}__${index}`} />
           ))}
         </ul>
       </TodoListWrapper>

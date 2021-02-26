@@ -4,8 +4,8 @@ const ModalWrapper = styled.div`
   position: fixed;
   height: 100vh;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(1px);
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -25,6 +25,7 @@ const ModalWrapper = styled.div`
     align-items: center;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
     border: 1px solid ${({ theme }) => theme.bgColor};
+    z-index: 99;
   }
 `;
 

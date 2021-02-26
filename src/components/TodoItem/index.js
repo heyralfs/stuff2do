@@ -42,15 +42,16 @@ const Todo = ({ todo }) => {
         <div className="todo-description">{todo.task}</div>
 
         <div className="buttons-wrapper">
-          <button>
-            <FontAwesomeIcon icon={faCheck} onClick={checkHendler} />
+          <button title="check/uncheck" onClick={checkHendler}>
+            <FontAwesomeIcon icon={faCheck} />
           </button>
 
-          <button>
-            <FontAwesomeIcon icon={faEdit} onClick={editHandler} />
+          <button title="edit" onClick={editHandler}>
+            <FontAwesomeIcon icon={faEdit} />
           </button>
 
           <button
+            title="delete"
             className="deleteBtn"
             onClick={() => setIsDeleteModalActive(true)}
           >

@@ -10,6 +10,7 @@ const BoardWrapper = styled.div`
   max-width: 768px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   padding: 10px 20px;
+  border-radius: 5px;
   h1,
   h2,
   h3 {
@@ -28,7 +29,7 @@ const BoardWrapper = styled.div`
   }
   @media screen and (max-width: 576px) {
     min-height: 100vh;
-    padding-top: 10px;
+    padding: 10px 20px 40px 20px;
   }
 `;
 

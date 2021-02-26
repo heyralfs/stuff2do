@@ -3,26 +3,43 @@ import { ThemeProvider } from "styled-components";
 import GlobalStyle from "./globalStyle";
 import GitHubCorner from "./components/GitHubCorner";
 import Board from "./components/Board";
+import Header from "./components/Header";
+import TodoList from "./components/TodoList/index";
+import NewTaskForm from "./components/NewTaskForm/index";
+import { TodosProvider } from "./contexts/TodosContext";
+
+// themes
+import themes from "./themes";
+import ThemeHandler from "./components/ThemeHandler";
 
 export default function App() {
-  const defaultPreferences = {
-    bgColor: "#5b78c7",
-    widgetBg: "#fff",
-    titleColor: "lightcoral",
-    color: "#777",
-  };
-  const [preferences, setPreferences] = React.useState(defaultPreferences);
-  // to change some theme preference, eg, color, do:
-  // setPreferences( { ...preferences, color: 'yellow' } )
+  const [preferences, setPreferences] = React.useState(() => {
+    const themePreference = window.localStorage.getItem("themePreference");
+    return themePreference ? JSON.parse(themePreference) : themes.Default;
+  });
+
+  React.useEffect(() => {
+    window.localStorage.setItem("themePreference", JSON.stringify(preferences));
+  }, [preferences]);
 
   return (
     <div className="App">
       <ThemeProvider theme={preferences}>
         <GlobalStyle />
 
-        <Board />
+        <Board>
+          <Header />
+
+          <TodosProvider>
+            <NewTaskForm />
+
+            <TodoList />
+          </TodosProvider>
+        </Board>
 
         <GitHubCorner projectUrl="https://github.com/heyralfs/stuff2do" />
+
+        <ThemeHandler themes={themes} setPreferences={setPreferences} />
       </ThemeProvider>
     </div>
   );

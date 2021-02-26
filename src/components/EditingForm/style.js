@@ -17,6 +17,7 @@ const EditingFormWrapper = styled.div`
     transition: all 300ms;
     color: ${({ theme }) => theme.color};
     padding: 5px 10px;
+    background: ${({ theme }) => theme.widgetBg};
   }
   & input {
     width: calc(70% - 5px);
@@ -24,7 +25,6 @@ const EditingFormWrapper = styled.div`
   }
   & select {
     width: 30%;
-    background: ${({ theme }) => theme.widgetBg};
   }
   & input:focus,
   & select:focus {

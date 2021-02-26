@@ -12,7 +12,7 @@ const TodoListItem = styled.li`
   font-size: 14px;
   list-style: none;
   margin-bottom: 10px;
-  transition: all 300ms;
+
   &:hover {
     box-shadow: -1px 2px 3px 1px rgba(0, 0, 0, 0.1);
     /* cursor: grab; */

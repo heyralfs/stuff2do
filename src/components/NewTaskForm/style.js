@@ -12,6 +12,12 @@ const Form = styled.form`
   select {
     padding: 5px 10px;
     margin-right: 5px;
+    background: ${({ theme }) => theme.widgetBg};
+  }
+  input,
+  option,
+  select,
+  input::placeholder {
     color: ${({ theme }) => theme.color};
   }
   input:focus,
@@ -24,12 +30,10 @@ const Form = styled.form`
   }
   select {
     width: 25%;
-    color: #666;
-    background: ${({ theme }) => theme.widgetBg};
   }
   button[type="submit"] {
     background-color: ${({ theme }) => theme.bgColor};
-    color: ${({ theme }) => theme.widgetBg};
+    color: white;
     width: 35px;
     display: inline-block;
     cursor: pointer;
