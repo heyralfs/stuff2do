@@ -29,7 +29,7 @@ const EditingForm = ({ todo, setIsEditingModalActive }) => {
 
   return (
     <EditingFormWrapper>
-      <h3>Are you sure you want to delete this task?</h3>
+      <h3>Edit your todo</h3>
       <form onSubmit={submitEdition}>
         <input
           type="text"
